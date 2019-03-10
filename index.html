@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Player</title>
+		<!--<script src="libraries/swfobject-2.3.js"></script>-->
+		<script src="libraries/add.min.js"></script>
+		<link rel="stylesheet" href="mustard-ui.min.css">
+		<script>
+			addjs('libraries/swfobject-2.3.js', 'libraries/jszip.min.js', 'libraries/jszip-utils.min.js');
+
+			window.onload = function () {
+				addjsb('main.js');
+			}
+		</script>
+		
+		<style>
+			html, body, article { height: 100%; }
+			/* need to set html and body because it's the parent to #flashContent
+			https://web-design-weekly.com/2014/11/18/viewport-units-vw-vh-vmin-vmax/ */
+			label {
+				color: white;
+				background-color: red;
+				font-family: sans-serif;
+				font-size: 2em;
+				padding: 0.25em;
+				text-align: center;
+				top: 50%;
+				left: 50%;
+				/*margin-top: -2em;*/
+			}
+			/*#flashContent {
+				width: 100%;
+				height: 100%;
+			}*/
+			#flashContent {
+				margin-top: -1em;
+			}
+			#dropbox {
+				width: 100%;
+				height: 80%;
+				
+				margin-top: 1em;
+				text-align: center;
+				/*border-style: dashed;
+				border-color: #343d48;*/
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!--<article id="dropbox" class="striped">-->
+		<br>
+		<input type="file" id="fileElem" style="display:none" onchange="handleFiles(this.files)"> 
+		<label id="label" for="fileElem" class="deleteme">Select a file here or drop it in the box to load the flash file</label>
+		
+		<article id="dropbox" class="progress-bar striped deleteme">
+			<span class="progress-bar-blue" style="width:100%"></span>
+		</article>
+		
+		<div id="flashContent0"></div>
+		<!--<div id="flashContent1"></div>-->
+		
+		<!--<script src="main.js"></script>-->
+	</body>
+</html>

@@ -101,7 +101,7 @@ function handleFiles(param) {
 			for (var filename of Object.keys(contents.files)){
 				
 				var mac = /__MACOSX/;
-				var swftype = /.swf$/;
+				var swftype = /.swf$/i;
 				var macc = filename.match(mac);
 				console.log('macc:', macc);
 				var swftypec = filename.match(swftype);
